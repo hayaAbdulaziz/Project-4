@@ -1,0 +1,14 @@
+<h1>All the Exercise</h1> 
+<table class="striped bordered">
+  <tr>
+    <th>Exercise</th>
+    <th>Image</th>
+  </tr>
+
+  <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= link_to exercise.name, exercise_path(exercise) %></td>
+        <td><%= image_tag(exercise.img, size: "200x200", alt: "exercise Image") %></td>
+      </tr>
+  <% end %>
+</table
