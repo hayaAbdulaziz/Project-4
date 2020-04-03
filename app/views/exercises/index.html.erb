@@ -1,5 +1,12 @@
 <h1>All the Exercise</h1> 
+<p>
+  Welcome <%= current_user.email %>
+</p>
+<% if user_signed_in? %>
+  <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+<% end %>
 <%= link_to "Add an Exercise", new_exercise_path, { :class => "button waves-effect waves-light btn" } %>
+
 <table class="striped bordered">
   <tr>
     <th>Exercise</th>

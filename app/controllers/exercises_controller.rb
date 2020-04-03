@@ -1,10 +1,20 @@
 class ExercisesController < ApplicationController
+
+  before_action :authenticate_user!, only: [:new, :create, :index, :destroy, :update, :edit]
+
+  before_action :find_exercise, only: [:show, :edit, :update, :destroy]
+
     def index
-        @exercises = Exercise.all  
+        @exercises = current_user.exercises.all  
     end
 
     def show
-        @exercise = Exercise.find(params[:id])
+       
+    if @exercise.user != current_user
+      flash[:notice] = "Not Allowed!"
+        redirect_to exercises_path
+      end
+      
       end
 
       def new
@@ -17,10 +27,14 @@ class ExercisesController < ApplicationController
       
       def create
         @exercise = Exercise.new(exercise_params)
+        @exercise.user = current_user
     
-        @exercise.save
-    
+       if @exercise.save
         redirect_to @exercise
+       else 
+        render :new
+       end 
+
       end
 
      def update
@@ -43,4 +57,8 @@ class ExercisesController < ApplicationController
       def exercise_params
         params.require(:exercise).permit(:name, :explain, :img)
       end
+
+      def find_exercise
+        @exercise = Exercise.find(params[:id])
+    end
 end
