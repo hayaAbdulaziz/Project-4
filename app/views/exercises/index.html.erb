@@ -3,12 +3,16 @@
   <tr>
     <th>Exercise</th>
     <th>Image</th>
+    <th>Explain</th>
   </tr>
 
   <% @exercises.each do |exercise| %>
       <tr>
         <td><%= link_to exercise.name, exercise_path(exercise) %></td>
+        
         <td><%= image_tag(exercise.img, size: "200x200", alt: "exercise Image") %></td>
+        <td><%= exercise.explain %></td>
+        
       </tr>
   <% end %>
 </table
