@@ -13,3 +13,8 @@ or going for a walk. As long as you are exerting yourself during the activity th
 Exercise.create(name: "Flexibility",explain: "These programs generally begin with a gentle warm-up to increase your body's core temperature. Then, they progress through a series of stretching exercises to lengthen the muscles in your feet
 , your legs, your hips and torso, and finally up through the head and neck." , img: "https://i.pinimg.com/564x/c1/38/46/c13846a7b936cb976cabdca75a61e777.jpg")
 Exercise.create(name: "push up", img: "https://media1.popsugar-assets.com/files/thumbor/g3IqvrBcCL8PCn2kV4oYF5LCXy0/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/11/21/628/n/1922729/0e7e9800cb65fd44_Tricep-Push-Up.jpg")
+
+
+Coach.create( name: "Hana" , specialty: "Resistance exercises")
+Coach.create(name: "Catherine" , specialty: "Cardio exercises")
+Coach.create(name: "Natasha" , specialty: "Core exercises")
