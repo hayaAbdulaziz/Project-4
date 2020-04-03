@@ -32,6 +32,12 @@ class ExercisesController < ApplicationController
         
         end
 
+        def destroy
+            @exercise = Exercise.find(params[:id]).delete
+        
+            redirect_to root_path
+          end
+
       private
 
       def exercise_params
