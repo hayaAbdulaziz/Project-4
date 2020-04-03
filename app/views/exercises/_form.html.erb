@@ -1,0 +1,17 @@
+
+<%=form_with model:@exercise, local: true do |form| %>
+    <p>
+    Name:
+    <%=form.text_field :name %>
+    </p>
+    <p>
+    Explain:
+    <%=form.text_field :explain %>
+    </p>
+    <p>
+    img: 
+    <%=form.text_field :img %>
+    </p>
+    
+    <%= form.submit %>
+    <% end %>

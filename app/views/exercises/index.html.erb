@@ -1,4 +1,5 @@
 <h1>All the Exercise</h1> 
+<%= link_to "Add an Exercise", new_exercise_path, { :class => "button waves-effect waves-light btn" } %>
 <table class="striped bordered">
   <tr>
     <th>Exercise</th>
@@ -9,7 +10,6 @@
   <% @exercises.each do |exercise| %>
       <tr>
         <td><%= link_to exercise.name, exercise_path(exercise) %></td>
-        
         <td><%= image_tag(exercise.img, size: "200x200", alt: "exercise Image") %></td>
         <td><%= exercise.explain %></td>
         
