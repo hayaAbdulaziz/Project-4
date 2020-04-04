@@ -1,12 +1,9 @@
 <h1>All the Coach</h1>
-
 <table >
   <tr>
     <th>Name</th>
     <th>Specialty</th>
-
   </tr>
-
   <% @coachs.each do |coach| %>
       <tr>
         <td><%= link_to coach.name, coach_path(coach) %></td>

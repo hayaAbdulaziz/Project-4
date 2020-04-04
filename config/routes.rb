@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   
   root 'exercises#index'
-  resources :exercises
-  get 'coachs', to: 'coachs#index'
+  resources :exercises ,:coach
 
+
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

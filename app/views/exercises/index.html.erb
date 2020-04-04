@@ -5,8 +5,7 @@
 <% if user_signed_in? %>
   <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
 <% end %>
-<%= link_to "Add an Exercise", new_exercise_path, { :class => "button waves-effect waves-light btn" } %>
-
+<%= link_to "Add an Exercise", new_exercise_path %>
 <table >
   <tr>
     <th>Exercise</th>
