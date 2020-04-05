@@ -1,0 +1,12 @@
+<%=form_for @coach do |form| %>
+    <p>
+    Name:
+    <%=form.text_field :name %>
+    </p>
+    <p>
+    Explain:
+    <%=form.text_field :specialty %>
+    </p>
+ 
+    <%= form.submit %>
+    <% end %>
