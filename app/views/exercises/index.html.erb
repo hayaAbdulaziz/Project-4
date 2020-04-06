@@ -2,9 +2,15 @@
 <p>
   Welcome <%= current_user.email %>
 </p>
-<% if user_signed_in? %>
-  <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
-<% end %>
+<nav>
+        <ul>
+          <li><%= link_to 'Exercise', exercises_path %></li>
+          <li><%= link_to 'Coach', coaches_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <% end %>
+        </ul>
+      </nav>
 <%= link_to "Add an Exercise", new_exercise_path %>
 <table >
   <tr>
@@ -18,6 +24,7 @@
         <td><%= link_to exercise.name, exercise_path(exercise) %></td>
         <td><%= image_tag(exercise.img, size: "200x200", alt: "exercise Image") %></td>
         <td><%= exercise.explain %></td>
+        
         <td><a href="<%= edit_exercise_path(exercise) %>" > Edit
           </a>
         </td>

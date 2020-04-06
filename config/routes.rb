@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
-  resources :coaches
   devise_for :users
+  resources :coaches
+  
 
   resources :exercises 
 

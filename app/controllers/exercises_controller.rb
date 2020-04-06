@@ -14,7 +14,9 @@ class ExercisesController < ApplicationController
       flash[:notice] = "Not Allowed!"
         redirect_to exercises_path
       end
-      
+
+    
+    
       end
 
       def new
@@ -49,7 +51,7 @@ class ExercisesController < ApplicationController
         def destroy
             @exercise = Exercise.find(params[:id]).delete
         
-            redirect_to root_path
+            redirect_to exercises_path
           end
 
       private
