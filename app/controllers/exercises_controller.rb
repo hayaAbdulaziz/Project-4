@@ -9,14 +9,10 @@ class ExercisesController < ApplicationController
     end
 
     def show
-       
     if @exercise.user != current_user
       flash[:notice] = "Not Allowed!"
         redirect_to exercises_path
       end
-
-    
-    
       end
 
       def new
@@ -30,10 +26,10 @@ class ExercisesController < ApplicationController
       def create
         @exercise = Exercise.new(exercise_params)
         @exercise.user = current_user
-    
        if @exercise.save
         redirect_to @exercise
        else 
+        puts "else"
         render :new
        end 
 
