@@ -1,19 +1,32 @@
-<h2>All Coaches</h2>
-<%= link_to "Add an Coach", new_coach_path %>
-<table >
-  <tr>
-    <th>name</th>
-    <th>specialty</th>
-  </tr>
 
+<nav>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">   <a class="nav-link active" <%= link_to 'Exercise', exercises_path %></li></a>
+          <li class="nav-item"><a class="nav-link active" <%= link_to 'Coach', coaches_path %></li></a>
+          <% if user_signed_in? %>
+            <li class="nav-item"> <a class="nav-link active" <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li></a>
+          <% end %>
+          <li class="nav-item"><a class="nav-link active" <%= link_to "Add an Coach", new_coach_path %></li></a>
+        </ul>
+      </nav>
+<table  class="table table-striped">
+  <tr>
+    <th scope="col">Coach Name</th>
+    <th scope="col">Coach Specialty</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
   <% @coaches.each do |coach| %>
       <tr>
         <td><%= link_to coach.name, coach_path(coach) %></td>
         <td><%= coach.specialty %></td>
-        <td> <%=link_to 'Delete' ,coach_path(coach.id) ,method: :delete, data: { confirm: 'Are you sure?' }%>  </td>
-        <td><a href="<%= edit_coach_path(coach) %>" > Edit
+      
+        <td><button type="button" class="btn btn-light"><a href="<%= edit_coach_path(coach) %>" > Edit
           </a>
+          </button>
           </td>
+          <td> <button type="button" class="btn btn-light"><%=link_to 'Delete' ,coach_path(coach.id) ,method: :delete, data: { confirm: 'Are you sure?' }%> 
+          </button></td>
       </tr>
   <% end %>
 </table>

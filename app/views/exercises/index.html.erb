@@ -1,34 +1,41 @@
-<h1>All the Exercise</h1> 
+
 <p>
   Welcome <%= current_user.email %>
 </p>
+
 <nav>
-        <ul>
-          <li><%= link_to 'Exercise', exercises_path %></li>
-          <li><%= link_to 'Coach', coaches_path %></li>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">   <a class="nav-link active" <%= link_to 'Exercise', exercises_path %></li></a>
+          <li class="nav-item"><a class="nav-link active" <%= link_to 'Coach', coaches_path %></li></a>
           <% if user_signed_in? %>
-            <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <li class="nav-item"> <a class="nav-link active" <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li></a>
           <% end %>
+          <li class="nav-item"><a class="nav-link active" <%= link_to "Add an Exercise", new_exercise_path %></li></a>
         </ul>
       </nav>
-<%= link_to "Add an Exercise", new_exercise_path %>
-<table >
+   
+
+<table class="table table-striped">
   <tr>
-    <th>Exercise</th>
-    <th>Image</th>
-    <th>Explain</th>
+    <th scope="col">Exercise</th>
+    <th scope="col">Image</th>
+    <th scope="col">Explain</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
   </tr>
+  
   <% @exercises.each do |exercise| %>
-      <tr>
-        <td><%= link_to exercise.name, exercise_path(exercise) %></td>
+      <tr >
+        <td ><%= link_to exercise.name, exercise_path(exercise) %></td>
         <td><%= image_tag(exercise.img, size: "200x200", alt: "exercise Image") %></td>
         <td><%= exercise.explain %></td>
         
-        <td><a href="<%= edit_exercise_path(exercise) %>" > Edit
+        <td><button type="button" class="btn btn-light"><a href="<%= edit_exercise_path(exercise) %>" > Edit
           </a>
+          </button>
         </td>
-        <td> <%=link_to 'Delete' ,exercise_path(exercise.id) ,method: :delete, data: { confirm: 'Are you sure?' }%>  </td>
-       
+        <td><button type="button" class="btn btn-light"> <%=link_to 'Delete' ,exercise_path(exercise.id) ,method: :delete, data: { confirm: 'Are you sure?' }%> </button>
+          </td>
       </tr>
   <% end %>
 </table>

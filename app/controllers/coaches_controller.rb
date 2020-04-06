@@ -5,7 +5,7 @@ end
 
 def show 
   @coach = Coach.find(params[:id])
-  @exercises  = @coach.exercises 
+ 
 end 
 
 def new
