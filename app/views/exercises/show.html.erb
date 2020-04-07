@@ -1,11 +1,17 @@
 <h2> Exercise </h1>
 <div>
+Name:
 <%= @exercise.name %>
 </div>
 <div>
+image :
 <%= image_tag(@exercise.img, size: "300x300", alt: "exercise Image") %>
 </div>
 <div>
+Explain:
 <%= @exercise.explain %>
 </div>
-
+<div>
+CoachName:
+<%= Coach.find(@exercise.coach_id).name %>
+</div>

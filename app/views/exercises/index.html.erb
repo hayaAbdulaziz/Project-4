@@ -1,8 +1,8 @@
-
+<header>
 <p>
   Welcome <%= current_user.email %>
 </p>
-
+</header>
 <nav>
         <ul class="nav nav-tabs">
           <li class="nav-item">   <a class="nav-link active" <%= link_to 'Exercise', exercises_path %></li></a>
@@ -13,8 +13,6 @@
           <li class="nav-item"><a class="nav-link active" <%= link_to "Add an Exercise", new_exercise_path %></li></a>
         </ul>
       </nav>
-   
-
 <table class="table table-striped">
   <tr>
     <th scope="col">Exercise</th>
@@ -36,6 +34,7 @@
         </td>
         <td><button type="button" class="btn btn-light"> <%=link_to 'Delete' ,exercise_path(exercise.id) ,method: :delete, data: { confirm: 'Are you sure?' }%> </button>
           </td>
+         
       </tr>
   <% end %>
 </table>

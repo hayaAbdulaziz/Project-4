@@ -6,6 +6,7 @@ class ExercisesController < ApplicationController
 
     def index
         @exercises = current_user.exercises.all  
+      
     end
 
     def show
@@ -25,7 +26,8 @@ class ExercisesController < ApplicationController
       
       def create
         @exercise = Exercise.new(exercise_params)
-        @exercise.user = current_user
+        @exercise.user = current_user 
+       
        if @exercise.save
         redirect_to @exercise
        else 
@@ -53,7 +55,7 @@ class ExercisesController < ApplicationController
       private
 
       def exercise_params
-        params.require(:exercise).permit(:name, :explain, :img)
+        params.require(:exercise).permit(:name, :explain, :img, :coach_id)
       end
 
       def find_exercise
