@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :coaches
-  
-
   resources :exercises 
-
- 
  
   root 'exercises#index'
   get "bootstrap", to: "exercises#bootstrap"

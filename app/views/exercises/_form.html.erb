@@ -13,8 +13,9 @@
     <input type="text" class="form-control"<%=form.text_field :img %>
     </div>
     <div class="form-group">
-    <%= form.label :coach %><br>
-    <%= form.collection_select :coach_id, Coach.all, :id, :name, { include_blank: 'None' }%>
+    <label for="exampleFormControlSelect1"> <%= form.label :coach %> </label><br>
+    <select class="form-control" 
+    <%= form.collection_select :coach_id, Coach.all, :id, :name, { include_blank: 'None' }%></select>
   </div>
     <button type="button" class="btn btn-light"><%= form.submit %></button>
     <% end %>

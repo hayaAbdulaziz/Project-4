@@ -1,17 +1,20 @@
-<h2> Exercise </h1>
-<div>
-Name:
+<div class="container justify-content-lg-center">
+<div class="card border-primary mb-3" style="max-width: 18rem;">
+<div class="card-header">
+
 <%= @exercise.name %>
 </div>
-<div>
-image :
-<%= image_tag(@exercise.img, size: "300x300", alt: "exercise Image") %>
+<div class="card-text">
+
+<%= image_tag(@exercise.img, size: "255x255", alt: "exercise Image") %>
 </div>
-<div>
-Explain:
+<div class="card-text">
+
 <%= @exercise.explain %>
 </div>
-<div>
-CoachName:
+<div  class="card-header">
+
 <%= Coach.find(@exercise.coach_id).name %>
+</div>
+</div>
 </div>
