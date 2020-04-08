@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_130405) do
+ActiveRecord::Schema.define(version: 2020_04_08_142900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2020_04_05_130405) do
     t.string "specialty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "coaches_and_exercises", force: :cascade do |t|
+    t.bigint "coache_id"
+    t.bigint "exercise_id"
+    t.index ["coache_id"], name: "index_coaches_and_exercises_on_coache_id"
+    t.index ["exercise_id"], name: "index_coaches_and_exercises_on_exercise_id"
   end
 
   create_table "exercises", force: :cascade do |t|
@@ -46,6 +53,8 @@ ActiveRecord::Schema.define(version: 2020_04_05_130405) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "coaches_and_exercises", "coaches", column: "coache_id"
+  add_foreign_key "coaches_and_exercises", "exercises"
   add_foreign_key "exercises", "coaches"
   add_foreign_key "exercises", "users"
 end
