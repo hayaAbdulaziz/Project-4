@@ -18,7 +18,6 @@ end
 def edit
   @coach = Coach.find(params[:id])
 end
-
 # To create a new coach
 def create
 @coach = Coach.new(coach_params)
