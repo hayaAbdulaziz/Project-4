@@ -1,9 +1,9 @@
 class CoachesController < ApplicationController
 
   # Show all coaches
-  def index
-    @coaches = Coach.all  
-  end
+def index
+ @coaches = Coach.all  
+end
 
   # To view one coach
 def show 

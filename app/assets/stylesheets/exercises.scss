@@ -3,42 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 a {
-  color:#0099FF; 
+  color: #007bff;
 }
 
 h1 {
-  color:#0099FF; 
+  color: #007bff;
 }
-h2{
-  color:#0099FF; 
+
+h2 {
+  color: #007bff;
 }
-.form-group{
-  color:#0099FF; 
+
+.form-group {
+  color: #007bff;
 }
 
 a:link {
-    text-decoration: none;
-  }
-  
-  a:visited {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  a:active {
-    text-decoration: underline;
-  }
-  .card {
-    text-align: center; 
-    opacity: 0.8;
+  text-decoration: none;
+}
 
-  }
- header{
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+.card {
+  text-align: center;
+  opacity: 0.8;
+
+}
+
+header {
   opacity: 0.5;
- }
+}
 
 
 /* Exo thin font from Google. */
@@ -51,50 +55,76 @@ $bg-height: 50px;
 
 /* Animations */
 @-webkit-keyframes bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+  100% {
+    background-position: $bg-width $bg-height;
+  }
 }
-@-moz-keyframes    bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
 }
-@-o-keyframes      bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
 }
-@keyframes         bg-scrolling-reverse {
-  100% { background-position: $bg-width $bg-height; }
+
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: $bg-width $bg-height;
+  }
 }
 
 @-webkit-keyframes bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
+  0% {
+    background-position: $bg-width $bg-height;
+  }
 }
-@-moz-keyframes    bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
+
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
 }
-@-o-keyframes      bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
+
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
 }
-@keyframes         bg-scrolling {
-  0% { background-position: $bg-width $bg-height; }
+
+@keyframes bg-scrolling {
+  0% {
+    background-position: $bg-width $bg-height;
+  }
 }
 
 /* Main styles */
 body {
   margin-top: 13.5rem;
-  
+
   color: #999;
   font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
   text-align: center;
   /* img size is 50x50 */
   background: url($bg-url) repeat 0 0;
-  
-  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
-  -moz-animation:    bg-scrolling-reverse .92s infinite; /* Fx 5+ */
-  -o-animation:      bg-scrolling-reverse .92s infinite; /* Opera 12+ */
-  animation:         bg-scrolling-reverse .92s infinite; /* IE 10+ */
+
+  -webkit-animation: bg-scrolling-reverse .92s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse .92s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse .92s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse .92s infinite;
+  /* IE 10+ */
   -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function:    linear;
-  -o-animation-timing-function:      linear;
-  animation-timing-function:         linear;
-  
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+
   &::before {
     content: "";
 
