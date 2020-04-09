@@ -26,9 +26,9 @@ Coach:
 
 * As a Coach, I want to view a single  Coach 
 * As a Coach, I want to view all Coach 
-* As a Coach, I want to create Exercise 
-* As a Coach, I want to delete a Exercise 
-* As a Coach, I want to edit a Exercise 
+* As a Coach, I want to create Coach 
+* As a Coach, I want to delete a Coach 
+* As a Coach, I want to edit a Coach 
 
  ### Project Development Plan :
 * The Goals : Create a website without error both logical ,and technology.
